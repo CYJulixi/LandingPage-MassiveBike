@@ -1,11 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=CYJulixi.html">
-    <title>Massive Bike</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Massive Bike: bicicletas, repuestos, accesorios y mantenimiento especializado en Rancagua.">
+  <title>Massive Bike | Vive el camino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-    <p>Redirigiendo a Massive Bike...</p>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="inicio">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Massive Bike, inicio">
+        <span class="brand-logo-frame" aria-hidden="true">
+          <img class="brand-logo" src="images/logo.png" alt="">
+        </span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu">☰<span class="sr-only">Abrir menú</span></button>
+      <ul class="nav-links" id="menu">
+        <li><a href="#bicicletas">Bicicletas</a></li>
+        <li><a href="#tienda">Repuestos</a></li>
+        <li><a href="#taller">Taller</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button class="cart-button" type="button" aria-controls="carrito" aria-expanded="false">Carrito <span id="cart-count" aria-label="productos en el carrito">0</span></button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <p class="eyebrow">TIENDA &amp; TALLER · RANCAGUA</p>
+        <h1 id="hero-title">TU PRÓXIMA<br><em>AVENTURA</em> EMPIEZA AQUÍ.</h1>
+        <p>Encuentra la bicicleta perfecta, equipa cada ruta y deja el mantenimiento en manos expertas.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#bicicletas">Ver bicicletas</a>
+          <a class="button ghost" href="#taller">Agendar mantenimiento</a>
+        </div>
+        <ul class="trust-list" aria-label="Beneficios">
+          <li><strong>+10</strong> años de experiencia</li>
+          <li><strong>6 meses</strong> de garantía en taller</li>
+          <li><strong>Envíos</strong> a todo Chile</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section container" id="bicicletas" aria-labelledby="products-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">CATÁLOGO</p><h2 id="products-title">Encuentra tu bicicleta</h2></div>
+        <p>Modelos seleccionados para ciudad, montaña y descenso. Recibe asesoría antes de comprar.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar catálogo">
+        <button class="filter active" type="button" data-filter="Todos">Todos</button>
+        <button class="filter" type="button" data-filter="Bicicletas">Bicicletas</button>
+        <button class="filter" type="button" data-filter="Repuestos">Repuestos</button>
+        <button class="filter" type="button" data-filter="Accesorios">Accesorios</button>
+        <label class="search"><span class="sr-only">Buscar productos</span><input id="search" type="search" placeholder="Buscar producto…"></label>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="workshop" id="taller" aria-labelledby="workshop-title">
+      <div class="container workshop-grid">
+        <div>
+          <p class="eyebrow">TALLER ESPECIALIZADO</p>
+          <h2 id="workshop-title">Tu bicicleta merece su mejor versión.</h2>
+          <p>Diagnóstico transparente, mecánicos especializados y repuestos de calidad. Te contactamos antes de realizar cualquier trabajo adicional.</p>
+          <a class="button primary" href="#contacto">Solicitar una hora</a>
+        </div>
+        <div class="service-cards">
+          <article><span>01</span><h3>Mantención básica</h3><p>Ajuste de frenos, cambios, transmisión y revisión de seguridad.</p><strong>Desde $24.990</strong></article>
+          <article><span>02</span><h3>Mantención completa</h3><p>Desarme, limpieza profunda, lubricación y ajuste integral.</p><strong>Desde $49.990</strong></article>
+          <article><span>03</span><h3>Suspensiones</h3><p>Servicio técnico para horquillas y amortiguadores.</p><strong>Cotización personalizada</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story container" id="nosotros" aria-labelledby="about-title">
+      <div class="story-image" role="img"></div>
+      <div>
+        <p class="eyebrow">NUESTRA HISTORIA</p>
+        <h2 id="about-title">Más que una tienda, somos comunidad.</h2>
+        <p>Nacimos en Rancagua por una pasión compartida: vivir el ciclismo. Desde 2014 acompañamos a quienes recién comienzan y a riders que buscan superar sus límites.</p>
+        <p>Trabajamos con atención cercana, recomendaciones honestas y respaldo después de cada compra.</p>
+        <blockquote>“La bicicleta correcta no es la más cara: es la que te invita a salir una vez más.”</blockquote>
+      </div>
+    </section>
+
+    <!-- Guía para elegir una bicicleta -->
+    <section class="section buying-guide" id="guia" aria-labelledby="guide-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TE AYUDAMOS A ELEGIR</p>
+            <h2 id="guide-title">Una bicicleta para cada aventura</h2>
+          </div>
+          <p>
+            No todas las bicicletas se comportan igual. Revisa estas categorías
+            y descubre cuál se adapta mejor a tu forma de pedalear.
+          </p>
+        </div>
+
+        <div class="guide-grid">
+          <article class="guide-card">
+            <span class="guide-number">01</span>
+            <h3>Mountain Bike</h3>
+            <p>
+              Diseñada para senderos, cerros y terrenos irregulares. Sus
+              neumáticos anchos entregan mayor control y seguridad.
+            </p>
+            <ul>
+              <li>Ideal para caminos de tierra</li>
+              <li>Suspensión para absorber impactos</li>
+              <li>Posición estable y deportiva</li>
+            </ul>
+            <a href="#bicicletas">Explorar modelos</a>
+          </article>
+
+          <article class="guide-card">
+            <span class="guide-number">02</span>
+            <h3>Downhill y Enduro</h3>
+            <p>
+              Para riders que buscan velocidad, saltos y descensos exigentes
+              con bicicletas resistentes y de gran recorrido.
+            </p>
+            <ul>
+              <li>Doble suspensión</li>
+              <li>Frenos de alto rendimiento</li>
+              <li>Geometría preparada para descensos</li>
+            </ul>
+            <a href="#bicicletas">Explorar modelos</a>
+          </article>
+
+          <article class="guide-card">
+            <span class="guide-number">03</span>
+            <h3>Gravel y Urbana</h3>
+            <p>
+              Una opción rápida y cómoda para ciudad, ciclovías, viajes largos
+              y rutas que combinan pavimento con caminos de tierra.
+            </p>
+            <ul>
+              <li>Excelente eficiencia al pedalear</li>
+              <li>Perfecta para trayectos diarios</li>
+              <li>Versátil para distintos caminos</li>
+            </ul>
+            <a href="#bicicletas">Explorar modelos</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios de la tienda -->
+    <section class="section benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">COMPRA CON CONFIANZA</p>
+            <h2 id="benefits-title">El respaldo Massive Bike</h2>
+          </div>
+          <p>
+            Queremos que disfrutes tu bicicleta desde el primer día y que
+            siempre tengas un equipo preparado para ayudarte.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <article>
+            <span aria-hidden="true">✓</span>
+            <h3>Asesoría personalizada</h3>
+            <p>Te orientamos según tu estatura, experiencia y tipo de ruta.</p>
+          </article>
+
+          <article>
+            <span aria-hidden="true">✓</span>
+            <h3>Productos seleccionados</h3>
+            <p>Trabajamos con bicicletas y componentes de marcas reconocidas.</p>
+          </article>
+
+          <article>
+            <span aria-hidden="true">✓</span>
+            <h3>Servicio posventa</h3>
+            <p>Seguimos disponibles para ajustes, dudas y mantenimiento.</p>
+          </article>
+
+          <article>
+            <span aria-hidden="true">✓</span>
+            <h3>Compra transparente</h3>
+            <p>Precios claros y recomendaciones basadas en lo que necesitas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opiniones de clientes -->
+    <section class="section testimonials container" aria-labelledby="testimonials-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COMUNIDAD MASSIVE BIKE</p>
+          <h2 id="testimonials-title">Ciclistas que confían en nosotros</h2>
+        </div>
+        <p>
+          Cada experiencia nos ayuda a mejorar y a construir una comunidad
+          unida por la pasión de pedalear.
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <article>
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>
+            “Me ayudaron a elegir mi primera bicicleta de montaña y explicaron
+            cada detalle con mucha paciencia.”
+          </blockquote>
+          <p><strong>Elvis L.</strong><br>Ciclista principiante</p>
+        </article>
+
+        <article>
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>
+            “El servicio del taller fue rápido y transparente. Mi bicicleta
+            quedó lista para volver a los senderos.”
+          </blockquote>
+          <p><strong>Miguel G.</strong><br>Rider de DH</p>
+        </article>
+
+        <article>
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>
+            “Encontré los repuestos que necesitaba y recibí una excelente
+            orientación antes de comprar.”
+          </blockquote>
+          <p><strong>Jackson G.</strong><br>Ciclista urbano</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="section faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div>
+          <p class="eyebrow">PREGUNTAS FRECUENTES</p>
+          <h2 id="faq-title">Resolvemos tus dudas</h2>
+          <p>
+            Si necesitas más información, también puedes usar nuestros botones
+            de contacto directo ubicados al costado derecho de la página.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>¿Realizan envíos a todo Chile?</summary>
+            <p>
+              Sí. El costo y plazo dependen del tamaño del producto y de la
+              comuna de destino.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Puedo solicitar ayuda para elegir una talla?</summary>
+            <p>
+              Sí. Nuestro equipo puede orientarte considerando tu estatura,
+              medidas y estilo de conducción.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Las bicicletas se entregan armadas?</summary>
+            <p>
+              Las bicicletas retiradas en tienda se entregan ajustadas y listas
+              para usar. Los envíos requieren un montaje final básico.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Cómo reservo una hora en el taller?</summary>
+            <p>
+              Completa el formulario de contacto o abre el sitio de WhatsApp
+              desde el botón flotante.
+            </p>
+          </details>
+
+          <details>
+            <summary>¿Qué medios de pago aceptan?</summary>
+            <p>
+               Tarjetas de Crédito, Débito y Transferencia Bancaria. Pago 100% protegido.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact container" id="contacto" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">HABLEMOS</p>
+        <h2 id="contact-title">¿Listo para rodar?</h2>
+        <p>Escríbenos para cotizar productos, resolver dudas o reservar una hora en el taller.</p>
+        <address>
+          <p><strong>Dirección</strong><br>Av. Libertador Bernardo O'Higgins, Rancagua</p>
+          <p><strong>Teléfono</strong><br><a href="tel:+56912345678">+56 9 1234 5678</a></p>
+          <p><strong>Correo</strong><br><a href="mailto:massivebike@gmail.com">massivebike@gmail.com</a></p>
+        </address>
+      </div>
+      <form id="contact-form">
+        <div class="field-row"><label>Nombre<input name="nombre" type="text" autocomplete="name" required></label><label>Correo<input name="correo" type="email" autocomplete="email" required></label></div>
+        <label>¿Qué necesitas?<select name="motivo" required><option value="">Selecciona una opción</option><option>Comprar una bicicleta</option><option>Repuestos o accesorios</option><option>Agendar mantenimiento</option><option>Otra consulta</option></select></label>
+        <label>Mensaje<textarea name="mensaje" rows="5" required placeholder="Cuéntanos cómo podemos ayudarte"></textarea></label>
+        <button class="button primary" type="submit">Enviar consulta</button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Accesos directos a redes y correo -->
+  <nav class="floating-actions" aria-label="Accesos de contacto">
+    <a
+      class="floating-button whatsapp"
+      href="https://www.whatsapp.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir el sitio web de WhatsApp"
+      title="WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3a12 12 0 0 0-10.3 18.2L4 28l7-1.8A12 12 0 1 0 16 3Zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.1 1.1 1.1-4-.3-.4A9.7 9.7 0 1 1 16 24.8Zm5.4-7.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.7-4.2-3.8-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.6l-.9-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3 .9 4.1.8.7-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.2-.1-.5-.2-.8-.4Z"/>
+      </svg>
+    </a>
+
+    <a
+      class="floating-button instagram"
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir el sitio web de Instagram"
+      title="Instagram"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M11 3h10a8 8 0 0 1 8 8v10a8 8 0 0 1-8 8H11a8 8 0 0 1-8-8V11a8 8 0 0 1 8-8Zm0 3a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V11a5 5 0 0 0-5-5H11Zm11.5 2.2a1.9 1.9 0 1 1 0 3.8 1.9 1.9 0 0 1 0-3.8ZM16 10a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+      </svg>
+    </a>
+
+    <a
+      class="floating-button gmail"
+      href="https://mail.google.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir el sitio web de Gmail"
+      title="Gmail"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 7h24a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm12 11L5 10v13h22V10l-11 8Zm0-3.7L22 10H10l6 4.3Z"/>
+      </svg>
+    </a>
+  </nav>
+
+  <aside class="cart" id="carrito" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="cart-head"><h2 id="cart-title">Tu carrito</h2><button id="close-cart" type="button" aria-label="Cerrar carrito">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer"><p>Total <strong id="cart-total">$0</strong></p><button class="button primary" id="checkout" type="button">Finalizar compra</button><p id="cart-message" class="cart-message" role="status"></p><p class="cart-note">Demostración académica: no se procesarán pagos reales.</p></div>
+  </aside>
+  <div class="overlay" id="overlay" hidden></div>
+
+  <!-- Mensaje personalizado al completar una compra -->
+  <div class="success-modal" id="success-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="success-title">
+    <div class="success-card">
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <p class="eyebrow">COMPRA COMPLETADA</p>
+      <h2 id="success-title">¡PEDIDO REALIZADO!</h2>
+      <p>Tu pedido fue realizado con mucho éxito!!!</p>
+      <strong>Gracias por confiar en MASSIVEBIKE</strong>
+      <button class="button primary" id="success-close" type="button">Seguir explorando</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid"><a class="brand" href="#inicio" aria-label="Massive Bike, inicio"><span class="brand-logo-frame" aria-hidden="true"><img class="brand-logo" src="images/logo.png" alt=""></span></a><p>Pedalea más lejos. Nosotros cuidamos el resto.</p><div><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></div></div>
+    <p class="copyright">© <span id="year"></span> Massive Bike · Proyecto académico de Julio Barrientos Bustos</p>
+  </footer>
 </body>
 </html>

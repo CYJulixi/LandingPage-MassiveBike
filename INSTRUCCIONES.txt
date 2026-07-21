@@ -1,0 +1,28 @@
+MASSIVE BIKE - COMO ABRIR Y SUBIR LA PAGINA
+
+ABRIR EN VS CODE
+1. Descomprime el archivo MassiveBike.zip.
+2. En Visual Studio Code selecciona Archivo > Abrir carpeta.
+3. Selecciona la carpeta MassiveBike.
+4. Abre index.html.
+5. Puedes abrir index.html directamente en tu navegador o usar la extension Live Server.
+
+SUBIR A GITHUB
+1. Crea un repositorio nuevo en github.com.
+2. En el repositorio selecciona Add file > Upload files.
+3. Sube index.html, styles.css, app.js, README.md e INSTRUCCIONES.txt.
+4. Escribe un mensaje de commit y confirma la subida.
+
+PUBLICAR CON GITHUB PAGES
+1. Abre Settings dentro del repositorio.
+2. Entra a Pages.
+3. Selecciona Deploy from a branch.
+4. Elige la rama main y la carpeta /root.
+5. Guarda y espera unos minutos para recibir el enlace publico.
+
+IMPORTANTE
+- Los archivos deben permanecer juntos en la misma carpeta.
+- index.html es la pagina principal.
+- styles.css contiene el diseño.
+- app.js contiene el catalogo, filtros y carrito.
+- Las fotografias necesitan conexion a Internet para mostrarse.
